@@ -18,7 +18,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18.4
-      - name: Installing snyk-delta and dependencies
+        run: npm install --location=global node-jq
         run: npm i -g snyk-delta
       - uses: snyk/actions/setup@master
       - name: Snyk Test
