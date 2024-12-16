@@ -69,7 +69,7 @@ jobs:
         run: snyk monitor --all-projects --org=${{ vars.SNYK_ORG  }} --remote-repo-url=${{ github.repository }}
 
       # Uncomment the following lines to enable Snyk Monitor with custom options
-      # - name: Run snyk monitor
+     #- name: Run snyk monitor
       #   uses: snyk/actions/node@master
       #   with:
       #     command: monitor
