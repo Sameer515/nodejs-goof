@@ -57,7 +57,7 @@ jobs:
       - name: Install jq
         run: npm install --location=global node-jq
 
-      # Step 8: Authenticate Snyk
+      # Step 8: Authenticate Snyk 
       - name: Authenticate with Snyk
         run: snyk auth ${{ secrets.SNYK_GH_ACTIONS_TOKEN }}
 
