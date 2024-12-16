@@ -70,4 +70,4 @@ jobs:
         uses: snyk/actions/node@master
         with:
           command: monitor
-          args: --all-projects --detection-depth=2 --org=${{ SNYK_ORG }} --severity=high
+          args: --all-projects --detection-depth=2 --org=${{ vars.SNYK_ORG }} --severity=high
