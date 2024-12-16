@@ -60,14 +60,14 @@ jobs:
       # Step 8: Authenticate Snyk
       - name: Authenticate with Snyk
         run: snyk auth ${{ secrets.SNYK_GH_ACTIONS_TOKEN }}
+
       # Step 9: Run Snyk Open Source Scan and Diff
-      - name: Run Snyk Scan (default severity)
-        run: /bin/bash snyk_delta_all_projects.sh
+      # - name: Run Snyk Scan (default severity)
+      #   run: /bin/bash snyk_delta_all_projects.sh
 
       # Uncomment the following lines to enable Snyk Monitor with custom options
-      # - name: Run snyk monitor
-      #   uses: snyk/actions/node@master
-      #   with:
-      #     command: monitor
-      #     args: --all-projects --detection-depth=2 --org=${{ SNYK_ORG }} --severity=high
-      #   run: snyk monitor --all-projects --detection-depth=2 --org=${{ SNYK_ORG }} --severity=high
+      - name: Run snyk monitor
+        uses: snyk/actions/node@master
+        with:
+          command: monitor
+          args: --all-projects --detection-depth=2 --org=${{ SNYK_ORG }} --severity=high
