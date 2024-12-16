@@ -60,15 +60,6 @@ jobs:
       # Step 8: Authenticate Snyk
       - name: Authenticate with Snyk
         run: snyk auth ${{ secrets.SNYK_GH_ACTIONS_TOKEN }}
-
-      # New Step: Check script installation and permissions
-      - name: Check script error  
-        run: |
-          echo "Checking script installation..."
-          ls -l /usr/local/bin
-          echo "Checking script permissions..."
-          ls -l /usr/local/bin/snyk_delta_all_projects.sh
-
       # Step 9: Run Snyk Open Source Scan and Diff
       - name: Run Snyk Scan (default severity)
         run: /bin/bash snyk_delta_all_projects.sh
