@@ -49,7 +49,7 @@ jobs:
 
       # Step 6: Install snyk_delta_all_projects.sh
       - name: Install snyk_delta_all_projects.sh
-        run: 
+        run: |
           wget -O snyk_delta_all_projects.sh https://raw.githubusercontent.com/snyk-tech-services/snyk-delta/refs/heads/develop/snyk_delta_all_projects.sh
           mv ./snyk_delta_all_projects.sh /usr/local/bin/
 
@@ -60,6 +60,14 @@ jobs:
       # Step 8: Authenticate Snyk
       - name: Authenticate with Snyk
         run: snyk auth ${{ secrets.SNYK_GH_ACTIONS_TOKEN }}
+
+      # New Step: Check script installation and permissions
+      - name: Check script error  
+        run: |
+          echo "Checking script installation..."
+          ls -l /usr/local/bin
+          echo "Checking script permissions..."
+          ls -l /usr/local/bin/snyk_delta_all_projects.sh
 
       # Step 9: Run Snyk Open Source Scan and Diff
       - name: Run Snyk Scan (default severity)
