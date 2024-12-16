@@ -44,8 +44,8 @@ jobs:
         run: npm install --location=global snyk@latest
 
       # Step 5: Install Snyk Delta
-      - name: Install snyk_delta
-        run: npm install --location=global snyk-delta@latest
+      #- name: Install snyk_delta
+        #run: npm install --location=global snyk-delta@latest
 
       # Step 6: Install snyk_delta_all_projects.sh
       - name: Install snyk_delta_all_projects.sh
