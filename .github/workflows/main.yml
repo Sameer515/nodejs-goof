@@ -26,10 +26,10 @@ jobs:
           ref: ${{ github.base_ref }}
 
       # Step 2: Setup Python (optional for additional configurations)
-      - name: Setup Python Environment
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.10'
+     # - name: Setup Python Environment
+      #  uses: actions/setup-python@v5
+       # with:
+        #  python-version: '3.10'
       # Uncomment the following lines if requirements.txt is used
       #  - run: pip install -r requirements.txt
 
@@ -44,8 +44,8 @@ jobs:
         run: npm install --location=global snyk@latest
 
       # Step 5: Install Snyk Delta
-      - name: Install Snyk Delta
-        run: npm install --location=global snyk-delta@latest
+    #  - name: Install Snyk Delta
+     #   run: npm install --location=global snyk-delta@latest
 
       # Step 6: Install snyk_delta_all_projects.sh
       - name: Install snyk_delta_all_projects.sh
@@ -63,7 +63,8 @@ jobs:
 
       # Step 9: Run Snyk Open Source Scan and Diff
       - name: Run Snyk Scan
-        run: /bin/bash snyk_delta_all_projects.sh --severity=low --org=${SNYK_ORG} || true
+        run: /bin/bash snyk_delta_all_projects.sh 
+   #--severity=low --org=${SNYK_ORG} 
 
       # Uncomment the following lines to enable monitoring
       # - name: Run snyk monitor
