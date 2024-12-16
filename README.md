@@ -24,7 +24,7 @@ Note: You *have* to  ff  use an old version of MongoDB version due to some of th
 
 You can also run the MongoDB server individually via Docker, such as:
 
-```sh
+```sh d d d d
 docker run --rm -p 27017:27017 mongo:3
 ```
 
